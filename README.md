@@ -1,6 +1,6 @@
 # zxx-edu-textbook
 
-国家中小学智慧教育平台电子课本整理；免登录下载 PDF
+[国家中小学智慧教育平台](https://basic.smartedu.cn/)电子课本整理；免登录下载 PDF
 
 ![](https://github.com/788009/zxx-edu-textbook/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-03-28%20220136.png?raw=true)
 
@@ -24,14 +24,14 @@ Release 中提供了 exe 和网页两个版本。
 
 ### exe
 
-- 下载 `exe.zip`。
+- 下载 `zxx-exe.zip`。
 - 解压后，在 `token.txt` 中填入 token。
 - 打开 `main.exe` 即可使用。
 - 请确保 `main.exe`、`tree.json` 和 `token.txt` 在同一目录下。
 
 ### 网页
 
-- 下载 `htmlGenerator.exe`。
+- 下载 `zxx-htmlGenerator.exe`。
 - 运行，输入 token，回车（这一步实际上是将 token 填入网页代码中）。
 - 用浏览器打开生成的 `single.html` 即可使用。
 
