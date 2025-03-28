@@ -1,0 +1,78 @@
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    text-align: left;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+#selector {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.level {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 15px 0;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    height: 32px;
+    margin: 0;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    border: transparent;
+    padding: 0 15px;
+    color: rgba(0,0,0,.85);
+    line-height: 30px;
+    word-break: break-all;
+    background: #f8f9fa;
+    cursor: pointer;
+    -webkit-transition: color .3s,background .3s,border-color .3s;
+    transition: color .3s,background .3s,border-color .3s;
+
+}
+
+button:hover {
+    color: #1890ff;
+    transform: scale(1.05);
+}
+
+button.selected {
+    background: #e8effd;
+    border-radius: 17px!important;
+    font-size: 14px;
+    color: #1e62ec;
+    border: 0;
+    box-shadow: none;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+a:hover {
+    border-bottom: 2px solid #007bff;
+}

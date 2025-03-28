@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子课本</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        let tree = {};
+        let path = [];
+        let token = "";
+
+        async function loadData() {
+            const treeResponse = await fetch("tree.json");
+            tree = await treeResponse.json();
+            const tokenResponse = await fetch("token.txt");
+            token = await tokenResponse.text();
+            updateOptions(tree, 0);
+        }
+
+        function updateOptions(node, level) {
+            removeLevels(level);
+            if (node.url) {
+                document.getElementById("result").innerHTML = `<a href="${node.url}?accessToken=${token.trim()}" target="_blank" rel="noopener noreferrer">访问链接</a>
+                <p>若 403 Forbidden，请更换浏览器</p>`;
+                return;
+            }
+            else if (node.url === null) {
+                document.getElementById("result").innerHTML = '暂无此课本'
+                return;
+            }
+            const container = document.createElement("div");
+            container.className = "level";
+            let defaultSelection = null;
+            Object.keys(node).forEach(key => {
+                const btn = document.createElement("button");
+                btn.textContent = key;
+                btn.onclick = () => selectOption(btn, node[key], key, level);
+                if (level == 0 && key == '教材') defaultSelection = btn;
+                container.appendChild(btn);
+            });
+            document.getElementById("selector").appendChild(container);
+            if (defaultSelection) selectOption(defaultSelection, node['教材'], '教材', 0);
+        }
+
+        function selectOption(button, node, key, level) {
+            path = path.slice(0, level);
+            path.push(key);
+            
+            // 取消同一层级其他按钮的选中状态
+            const buttons = document.querySelectorAll(`.level:nth-child(${level + 1}) button`);
+            buttons.forEach(btn => btn.classList.remove("selected"));
+            
+            // 设置当前按钮为选中状态
+            button.classList.add("selected");
+            
+            updateOptions(node, level + 1);
+        }
+
+        function removeLevels(fromLevel) {
+            const levels = document.querySelectorAll(".level");
+            levels.forEach((el, index) => {
+                if (index >= fromLevel) el.remove();
+            });
+            document.getElementById("result").innerHTML = "";
+        }
+
+        window.onload = loadData;
+    </script>
+</head>
+<body>
+    <h1>电子课本</h1>
+    <div id="selector"></div>
+    <div id="result"></div>
+</body>
+</html>
