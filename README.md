@@ -14,7 +14,7 @@
 
 ### 方法二
 
-在课本查看页抓包，`ctrl` + `F` 搜索 `id`，点击第一个结果的 `x-nd-auth` 行：
+在课本查看页抓包（F12 → Network/网络 → 刷新），`ctrl` + `F` 搜索 `id`，点击第一个结果的 `x-nd-auth` 行：
 
 ![](https://github.com/788009/zxx-edu-textbook/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-03-28%20212723.png?raw=true)
 
