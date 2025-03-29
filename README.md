@@ -10,7 +10,7 @@
 
 说是免登录，其实依然需要登录，只是将 token 保存，之后无需登录。
 
-### [方法一](https://github.com/happycola233/tchMaterial-parser?tab=readme-ov-file#-%E8%8E%B7%E5%8F%96-access-token%E5%BF%85%E9%9C%80)
+### [方法一](https://github.com/happycola233/tchMaterial-parser?tab=readme-ov-file#-%E8%8E%B7%E5%8F%96-access-token%E5%BF%85%E9%9C%80)（推荐）
 
 ### 方法二
 
