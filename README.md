@@ -10,6 +10,10 @@
 
 说是免登录，其实依然需要登录，只是将 token 保存，之后无需登录。
 
+### [方法一](https://github.com/happycola233/tchMaterial-parser?tab=readme-ov-file#-%E8%8E%B7%E5%8F%96-access-token%E5%BF%85%E9%9C%80)
+
+### 方法二
+
 在课本查看页抓包，`ctrl` + `F` 搜索 `id`，点击第一个结果的 `x-nd-auth` 行：
 
 ![](https://github.com/788009/zxx-edu-textbook/blob/main/images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-03-28%20212723.png?raw=true)
